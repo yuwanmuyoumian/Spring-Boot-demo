@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.lemon.mapper.LemonEmployeeMapper">
+    <resultMap id="BaseResultMap" type="com.spring.lemon.entity.bean.LemonEmployee">
+        <id column="employee_id" jdbcType="INTEGER" property="employeeId"/>
+        <result column="employee_name" jdbcType="VARCHAR" property="employeeName"/>
+        <result column="employee_phone" jdbcType="VARCHAR" property="employeePhone"/>
+        <result column="create_user" jdbcType="INTEGER" property="createUser"/>
+        <result column="create_uname" jdbcType="VARCHAR" property="createUname"/>
+        <result column="update_user" jdbcType="INTEGER" property="updateUser"/>
+        <result column="update_uname" jdbcType="VARCHAR" property="updateUname"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        employee_id, employee_name, employee_phone, create_user, create_uname, update_user,
+        update_uname
+    </sql>
+    <select id="getEmployee" resultMap="BaseResultMap">
+        SELECT * from lemon_employee
+    </select>
+</mapper>
